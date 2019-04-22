@@ -22,6 +22,5 @@ twitter_url: https://twitter.com/odedia
 
 # build settings
 markdown: kramdown
-
 sass:
   style: compressed
