@@ -2,7 +2,7 @@
 title: Odedia's Corner
 subtitle: by Oded Shopen
 email: odedia@gmail.com
-description: Oded's thoughts, rants and geeky projects
+description: These are my thoughts, rants and geeky projects
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: https://www.odedia.org
 author: Oded Shopen
@@ -11,7 +11,7 @@ city: Israel
 country: Israel
 
 # homepage tiles
-tiles-source: pages # accepts "posts" or "pages"
+tiles-source: posts # accepts "posts" or "pages"
 tiles-count: 6
 
 # social settings

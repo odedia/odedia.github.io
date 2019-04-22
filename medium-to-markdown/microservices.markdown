@@ -1,9 +1,3 @@
----
-layout: post
-title: Tempus
-description: Feugiat amet tempus
-image: assets/images/pic02.jpg
----
 * * *
 
 # Microservices are for humans, not machines
@@ -140,8 +134,7 @@ Microservices have organisational benefits for the development and business team
 
 Then there’s the concern of breaking your system into _too many_ microservices. As Matt Stine recently said:
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">you most likely don&#39;t need 50 microservices</p>&mdash; Matt Stine in Bangalore 🇮🇳 (@mstine) <a href="https://twitter.com/mstine/status/1020387578695110658?ref_src=twsrc%5Etfw">July 20, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<iframe data-width="500" data-height="281" width="500" height="281" src="/media/582005067a33f3a9077a8629482e0d0a?postId=721a6a56344f" data-media-id="582005067a33f3a9077a8629482e0d0a" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F987354027607445504%2FiM-sODvc_400x400.jpg&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
 
 Don’t go crazy out there. The purpose of microservices is to help your organisation develop software quickly and deploy it easily. If you can’t tell the forest from the trees you’re missing the point. In some cases, it is possible that your technological requirements will contradict your business requirements. The business wants a well organised system with clear boundaries. If you get so fine-grained to the point where every microservice has to call some other microservice to fulfil its duties, you’re creating a huge network of systems, which probably doesn’t benefit anyone.
 
