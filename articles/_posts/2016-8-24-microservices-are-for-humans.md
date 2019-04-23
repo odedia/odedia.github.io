@@ -2,7 +2,7 @@
 layout: post
 title: Microservices are for humans, not machines
 description: What are the true benefits of a microservices architecture?
-image: assets/images/microservices-humans.jpg
+image: assets/images/microservices-humans.png
 type: article
 source: https://medium.com/p/721a6a56344f
 ---
