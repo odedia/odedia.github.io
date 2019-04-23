@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introduction to Spring Session Redis in Cloud-Native Environments
-description: How can a distributed session store help with your cloud-native journey?
+description: A distributed session store can help with your cloud-native journey
 image: assets/images/spring-session-redis.png
 type: article
 source: https://medium.com/@odedia/spring-session-redis-part-i-overview-a5f6c7446c8b

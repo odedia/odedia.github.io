@@ -1,6 +1,12 @@
+---
+layout: post
+title: 'Comparing Kubernetes to Pivotal Cloud Foundry — A Developer’s Perspective'
+description: What are the benefits and drawbacks of each platform? Is this even a valid comparison?
+image: assets/images/apps-manager.png
+type: article
+source: https://medium.com/@odedia/comparing-kubernetes-to-pivotal-cloud-foundry-a-developers-perspective-6d40a911f257
+---
 * * *
-
-# Comparing Kubernetes to Pivotal Cloud Foundry — A Developer’s Perspective
 
 _Author’s disclosure: I’m currently a Sr. Platform Architect at Pivotal, however I’ve written this article almost a whole year before joining the company. It is based on my own unsolicited experience working with the platform as a vendor for a third party._
 
@@ -59,7 +65,7 @@ Kubernetes runs Docker containers. As such, it supports a very wide range of app
 
 Anyone who had a chance to write a Dockerfile knows it can be either a trivial task of writing a few lines of descriptor code, or it can get complicated rather quickly. Here’s a simple example I [pulled off of github](https://github.com/kstaken/dockerfile-examples/blob/master/nodejs-mongodb/Dockerfile), and that’s a fairly simple example:
 
-<iframe width="700" height="250" src="/media/f2f62d5c06d16feb76842fe943e3aa15?postId=6d40a911f257" data-media-id="f2f62d5c06d16feb76842fe943e3aa15" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars1.githubusercontent.com%2Fu%2F2992180%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>Running nodejs and Mongo DB in a docker container
+<script src="https://gist.github.com/odedia/ce6d76d1766235c24331ac4a60646ef0.js"></script>
 
 This example should not seem intimidating to the average developer, but it does immediately show you there is a learning curve here. Since Docker is a generic container solution, it can run almost anything. It is your job as the developer to define how the operating system inside the container will execute your code. It is very powerful, but with great power comes great responsibility.
 
@@ -117,32 +123,29 @@ Cloud foundry uses a command line interface called cf. It is a cli that lets you
 
 For example, if you are in a folder that contains a spring boot jar file called myapp.jar, you can deploy this application to PCF with the following command:
 
-<pre name="025d" id="025d" class="graf graf--pre graf-after--p">cf push myapp -p myapp.jar</pre>
+```
+cf push myapp -p myapp.jar
+```
 
 That’s it! That’s all you need. PCF will lookup the current working directory and find the jar executable. It will then update bits to the platform, where the java buildpack would create a container, calculate the required memory settings, deploy it to the currently logged-in org and space in PCF, and set a route based on the application name:
 
-<pre name="6895" id="6895" class="graf graf--pre graf-after--p">wabelhlp0655019:test odedia$ **cf push myapp -p myapp.jar**</pre>
 
-<pre name="f1ce" id="f1ce" class="graf graf--pre graf-after--pre">Updating app myapp in org OdedShopen / space production as user…</pre>
-
-<pre name="89da" id="89da" class="graf graf--pre graf-after--pre">OK</pre>
-
-<pre name="eed3" id="eed3" class="graf graf--pre graf-after--pre">Uploading myapp…</pre>
-
-<pre name="8654" id="8654" class="graf graf--pre graf-after--pre">Uploading app files from: /var/folders/_9/wrmt9t3915lczl7rf5spppl597l2l9/T/unzipped-app271943002</pre>
-
-<pre name="9d13" id="9d13" class="graf graf--pre graf-after--pre">Uploading 977.4K, 148 files</pre>
-
-<pre name="8f9b" id="8f9b" class="graf graf--pre graf-after--pre">Done uploading</pre>
-
-<pre name="8734" id="8734" class="graf graf--pre graf-after--pre">OK</pre>
-
-<pre name="c8e9" id="c8e9" class="graf graf--pre graf-after--pre">Starting app myapp in org OdedShopen / space production as user…
+```
+wabelhlp0655019:test odedia$ cf push myapp -p myapp.jar
+Updating app myapp in org OdedShopen / space production as user…
+OK
+Uploading myapp…
+Uploading app files from: /var/folders/_9/wrmt9t3915lczl7rf5spppl597l2l9/T/unzipped-app271943002
+Uploading 977.4K, 148 files
+Done uploading
+OK
+Starting app myapp in org OdedShopen / space production as user…
 Downloading pcc_php_buildpack…
 Downloading binary_buildpack…
 Downloading python_buildpack…
 Downloading staticfile_buildpack…
-**Downloading java_buildpack…** Downloaded binary_buildpack (61.6K)
+Downloading java_buildpack…
+Downloaded binary_buildpack (61.6K)
 Downloading ruby_buildpack…
 Downloaded ruby_buildpack
 Downloading nodejs_buildpack…
@@ -159,51 +162,51 @@ Downloaded python_buildpack (341.6M)
 Downloaded go_buildpack (415.1M)
 Downloaded php_buildpack (341.7M)
 Downloaded dotnet_core_buildpack (919.8M)
-**Creating container
-Successfully created container** Downloading app package…
+Creating container
+Successfully created container
+Downloading app package…
 Downloaded app package (40.7M)
 Staging…
  — — -> Java Buildpack Version: v3.18 |
-[https://github.com/cloudfoundry/java-buildpack.git#841ecb2](https://github.com/cloudfoundry/java-buildpack.git#841ecb2)
- — — -> Downloading Open Jdk JRE 1.8.0_131 from [https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8.0_131.tar.gz](https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8.0_131.tar.gz) (found in cache)
+https://github.com/cloudfoundry/java-buildpack.git#841ecb2
+ — — -> Downloading Open Jdk JRE 1.8.0_131 from https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8.0_131.tar.gz (found in cache)
 Expanding Open Jdk JRE to .java-buildpack/open_jdk_jre (1.1s)
- — — -> Downloading Open JDK Like Memory Calculator 2.0.2_RELEASE from [https://java-buildpack.cloudfoundry.org/memory-calculator/trusty/x86_64/memory-calculator-2.0.2_RELEASE.tar.gz](https://java-buildpack.cloudfoundry.org/memory-calculator/trusty/x86_64/memory-calculator-2.0.2_RELEASE.tar.gz) (found in cache)**Memory Settings: -Xmx681574K -XX:MaxMetaspaceSize=104857K -Xss349K -Xms681574K -XX:MetaspaceSize=104857K**</pre>
-
-<pre name="a41e" id="a41e" class="graf graf--pre graf-after--pre"> — — -> Downloading Container Security Provider 1.5.0_RELEASE from [https://java-buildpack.cloudfoundry.org/container-security-provider/container-security-provider-1.5.0_RELEASE.jar](https://java-buildpack.cloudfoundry.org/container-security-provider/container-security-provider-1.5.0_RELEASE.jar) (found in cache)</pre>
-
-<pre name="aa79" id="aa79" class="graf graf--pre graf-after--pre"> — — -> Downloading Spring Auto Reconfiguration 1.11.0_RELEASE from [https://java-buildpack.cloudfoundry.org/auto-reconfiguration/auto-reconfiguration-1.11.0_RELEASE.jar](https://java-buildpack.cloudfoundry.org/auto-reconfiguration/auto-reconfiguration-1.11.0_RELEASE.jar) (found in cache)</pre>
-
-<pre name="50cb" id="50cb" class="graf graf--pre graf-after--pre">Exit status 0
+ — — -> Downloading Open JDK Like Memory Calculator 2.0.2_RELEASE from https://java-buildpack.cloudfoundry.org/memory-calculator/trusty/x86_64/memory-calculator-2.0.2_RELEASE.tar.gz (found in cache)Memory Settings: -Xmx681574K -XX:MaxMetaspaceSize=104857K -Xss349K -Xms681574K -XX:MetaspaceSize=104857K
+ — — -> Downloading Container Security Provider 1.5.0_RELEASE from https://java-buildpack.cloudfoundry.org/container-security-provider/container-security-provider-1.5.0_RELEASE.jar (found in cache)
+ — — -> Downloading Spring Auto Reconfiguration 1.11.0_RELEASE from https://java-buildpack.cloudfoundry.org/auto-reconfiguration/auto-reconfiguration-1.11.0_RELEASE.jar (found in cache)
+Exit status 0
 Uploading droplet, build artifacts cache…
 Uploading build artifacts cache…
 Uploading droplet…
 Staging complete
 Uploaded build artifacts cache (109B)
-**Uploaded droplet (86.2M)** Uploading complete
+Uploaded droplet (86.2M)
+Uploading complete
 Destroying container
 Successfully destroyed container
 0 of 1 instances running, 1 starting
 0 of 1 instances running, 1 starting
 0 of 1 instances running, 1 starting
 0 of 1 instances running, 1 starting
-**1 of 1 instances running**</pre>
+1 of 1 instances running
+```
 
 Although you can start with barely any intervention, this doesn’t mean you give up any control. You have a lot of customizations available in PCF. You can define your own routes, set the number of instances, max memory and disk space, environment variables etc. All of this can be done in the cf cli or by having a manifest.yml file available as a parameter to the cf push command. A typical manifest.yml file can be as simple as the following:
 
-<pre name="f712" id="f712" class="graf graf--pre graf-after--p">applications:
+```
+applications:
 - name: my-app
   memory: 512M
   instances: 2
   env:
     PARAM1: PARAM1VALUE
-    PARAM2: PARAM2VALUE</pre>
+    PARAM2: PARAM2VALUE
+```
 
 The main takeaway is this: with PCF, provide the information you know, and the platform will imply the rest. Cloud Foundry’s [haiku](https://twitter.com/onsijoe/status/598235841635360768?lang=en) is:
 
-> Here’s my code
-
-> Run it on the cloud for me.
-
+> Here’s my code <br>
+> Run it on the cloud for me.<br>
 > I don’t care how.
 
 #### Kubernetes
@@ -240,11 +243,14 @@ apiVersion: extensions/v1beta1kind: Ingressmetadata:  name: test-ingress  annota
 
 Once that file is available, you can create the ingress by issuing a command
 
-<pre name="9636" id="9636" class="graf graf--pre graf-after--p">**kubectl create -f my-ingress.yaml**</pre>
+```
+**kubectl create -f my-ingress.yaml**
+```
 
 Note that unlike the single manifest.yml in PCF, the deployment yml files in Kubernetes are separated — there is one for pod creation, one for service creation and as you saw above — one for ingress creation. A typical descriptor file is not entirely overwhelming but I wouldn’t call it the most user friendly either. For example, here’s a descriptor file for nginx deployment:
 
-<pre name="c7ba" id="c7ba" class="graf graf--pre graf-after--p">apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+```
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
   name: nginx-deployment
@@ -264,14 +270,13 @@ spec:
       - name: nginx
         image: nginx:1.7.9
         ports:
-        - containerPort: 80</pre>
+        - containerPort: 80
+```
 
 All this to say — with kubernetes, you need to be specific. Don’t expect deployments to be implied. If I had to create a haiku for Kubernetes, it’ll be probably something like this:
 
-> Here’s my code
-
-> I’ll tell you exactly how you should run it on the cloud for me
-
+> Here’s my code<br>
+> I’ll tell you exactly how you should run it on the cloud for me<br>
 > And don’t you dare make any assumptions on the delployment without my written consent!
 
 ### Zero Downtime Deployments
@@ -290,7 +295,9 @@ With Pivotal Cloud Foundry, t̶h̶e̶r̶e̶’̶s̶ ̶n̶o̶ ̶b̶u̶i̶l̶t̶-�
 *   Perform testing and verification on the new app.
 *   Map an additional route to the myApp-v2 application, using the same route as the original application. For example:
 
-<pre name="16f1" id="16f1" class="graf graf--pre graf-after--li">**cf map-route** myApp-v2 mysite.com —hostname myApp</pre>
+```
+cf map-route myApp-v2 mysite.com —hostname myApp
+```
 
 *   Now requests to your application are load balanced between v1 and v2\. Based of the number of instances available to each version, you can perform A/B testing. For example — if you have 4 instances of v1 and 1 instance of v2, 20% of your clients will be routed to the new codebase.
 *   If you identify issues at any point — simply remove v2\. No harm done.
@@ -303,13 +310,17 @@ With Pivotal Cloud Foundry, t̶h̶e̶r̶e̶’̶s̶ ̶n̶o̶ ̶b̶u̶i̶l̶t̶-�
 
 kubectl has a built-in support for rolling updates. You basically pass a new docker image for a given deployment, for example:
 
-<pre name="16e4" id="16e4" class="graf graf--pre graf-after--p">kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=jon/kubernetes-bootcamp:v2</pre>
+```
+kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=jon/kubernetes-bootcamp:v2
+```
 
 The command above tells kubernetes to perform a rolling update between all pods of the kubernetes-bootcamp deployment from its current image to the new v2 image. During this rollout, your application remains available.
 
 Even more impressive — you can always revert back to the previous version by issuing the undo command:
 
-<pre name="5b58" id="5b58" class="graf graf--pre graf-after--p">kubectl rollout undo deployments/kubernetes-bootcamp</pre>
+```
+kubectl rollout undo deployments/kubernetes-bootcamp
+```
 
 ### External Load Balancing
 
@@ -319,11 +330,15 @@ If we’ll take an external view of the levels of abstraction that are needed to
 
 #### Kubernetes
 
-<pre name="b190" id="b190" class="graf graf--pre graf-after--h4">ingress → service → pod → container</pre>
+```
+ingress → service → pod → container
+```
 
 #### Cloud Foundry
 
-<pre name="4965" id="4965" class="graf graf--pre graf-after--h4">route → container</pre>
+```
+route → container
+```
 
 ### Internal Load Balancing (Service Discovery)
 
@@ -354,11 +369,15 @@ The major benefit that Kubernetes’ load balancing offers is not requiring any 
 *   You created a service called my-service that exposes this application to the cluster
 *   From any other pod inside the namespace, you can call:
 
-<pre name="2384" id="2384" class="graf graf--pre graf-after--li">GET https://my-service/myApi</pre>
+```
+GET https://my-service/myApi
+```
 
 *   From any other pod in any other namespace in the cluster, you can call:
 
-<pre name="c6fc" id="c6fc" class="graf graf--pre graf-after--li">GET https://my-service.zone1/myApi</pre>
+```
+GET https://my-service.zone1/myApi
+```
 
 And the API would load-balance over the available instances. It doesn’t matter if your client is written in Java, PHP, Ruby, .NET or any other technology.
 
@@ -447,11 +466,3 @@ The main conclusion is that this is definitely not a this _or_ that discussion. 
 Thank you for reading, and happy coding!
 
 Oded Shopen
-
-_Visit my homepage:_ [_http://odedia.org_](http://odedia.org)
-
-_Follow me on twitter:_ [_https://twitter.com/odedia_](https://twitter.com/odedia)
-
-_Follow me on LinkedIn:_ [_https://www.linkedin.com/in/odedia/_](https://www.linkedin.com/in/odedia/)
-
-_Follow me on 500px:_ [https://500px.com/odedia](https://500px.com/odedia)
