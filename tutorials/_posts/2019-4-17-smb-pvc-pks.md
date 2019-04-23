@@ -13,7 +13,7 @@ Still, being Kubernetes, it would be nice to treat an SMB share as yet another P
 
 I've found a few solutions for this online, but the only one that seemed valuable and from a well known vendor was the [FlexVolume for Azure by Microsoft](https://github.com/Azure/kubernetes-volume-drivers). This project exposes several Azure services as PersistentVolumes to Kubernetes.
 
-The one drawback of this project is that it was developed specificalyl for Azure and AKS (Azure Kubernetes Service).
+The drawback of this project is that it was developed specifically for Azure and AKS (Azure Kubernetes Service).
 
 The biggest issue was that the installation required you to install specific binaries on the worker nodes, specifically `jq`. While that may be a feasible outcome on AKS, it was not a realistic approach for PKS. In PKS, BOSH manages the Worker nodes, patches them, upgrades then or just repaves (i.e. resets) them to a known state. Therefore, any "snowflake" binary installation on the working nodes would disappear on the next upgrade cycle.
 
