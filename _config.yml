@@ -12,7 +12,7 @@ country: Israel
 
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
-tiles-count: 6
+tiles-count: 60
 
 # social settings
 500px_url: https://500px.com/odedia

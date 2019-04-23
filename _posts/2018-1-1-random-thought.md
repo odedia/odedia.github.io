@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Magna
-description: Lorem etiam nullam
+title: Random
+description: A random thought
 image: assets/images/pic03.jpg
-type: tutorial
 ---
 
 ![test image]({{ site.url | absolute_path}}/assets/images/pic03.jpg)

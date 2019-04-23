@@ -4,6 +4,8 @@ title: About me
 description: Who am I?
 image: assets/images/headshot.jpg
 nav-menu: true
+show_tile: true
+order: 30
 ---
 
 Hi there! I'm Oded.
