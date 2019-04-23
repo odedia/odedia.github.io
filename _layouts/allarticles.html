@@ -19,7 +19,7 @@
       <!-- One -->
 <section id="one" class="tiles">
   {% for post in site.posts limit:site.tiles-count %}
-  {% if post.type == 'tutorial' %}
+  {% if post.type == 'article' %}
   <article>
     <span class="image">
       <img src="{{ post.image }}" alt="" />

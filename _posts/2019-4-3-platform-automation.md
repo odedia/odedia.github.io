@@ -4,6 +4,7 @@ title: Platform Automation - One pipeline to rule them all
 description: Build a single Platform Automation pipeline for both Pivotal Cloud Foundry and Pivotal Container Service, using Concourse
 image: assets/images/platform-automation.png
 source: https://github.com/odedia/ops-manager-automation-cc
+type: tutorial
 ---
 ## What is this?
 
