@@ -10,7 +10,7 @@ source: https://medium.com/p/721a6a56344f
 
 # Microservices are for humans, not machines
 
-> Software is eating the world.
+> ## Software is eating the world.
 
 Companies large and small are going through a digital transformation journey, as they try to compete in this age of digital disruption. It’s no longer big-fish-eats-small-fish. We’re in a fast-fish-eats-slow-fish world.
 
@@ -42,7 +42,8 @@ Another benefit is the ability to selectively deploy only those microservices th
 
 The microservice architecture is a distributed system architecture. Distributed systems are hard. There are quite a few operational concerns to think about when managing a distributed system at scale, that simply don’t exist in the monolith world. For example, tracing end-to-end flows becomes a challenge. Your in-process call stack is replaced with network calls that have latency. Call failures can result in subsequent cascading failures.
 
-<iframe data-width="500" data-height="281" width="500" height="281" src="/media/355f0e7aeab32539d59c005e1732fc17?postId=721a6a56344f" data-media-id="355f0e7aeab32539d59c005e1732fc17" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F760126381250445312%2FnN_eXi8B_400x400.jpg&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>A good summary of the problems with managing distributed systems
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">We replaced our monolith with micro services so that every outage could be more like a murder mystery.</p>&mdash; Honest Status Page (@honest_update) <a href="https://twitter.com/honest_update/status/651897353889259520?ref_src=twsrc%5Etfw">October 7, 2015</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Many design patterns have emerged to overcome some of those drawbacks. Books were written to help developers and operational teams design and monitor microservices at scale. Service registry, circuit breakers, externalised configuration, API gateway, the SAGA pattern, eventual consistency — all of these were designed to overcome the shortcomings of a microservice architecture compared to that of a monolith. Why would anyone choose to go down that path? Isn’t it easier to just over-scale your monolith and be done with it?
 
@@ -155,8 +156,10 @@ Another tendency we have is to create an overload of dependencies between compon
 
 Nobody wants a distributed monolith. Microservices have benefits and drawbacks. Monoliths have benefits and drawbacks. I find it very hard to see anything but drawbacks for distributed monoliths 😄.
 
-<iframe data-width="500" data-height="281" width="500" height="281" src="/media/e042af81b372595cdda58ac816a20dcf?postId=721a6a56344f" data-media-id="e042af81b372595cdda58ac816a20dcf" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F987354027607445504%2FiM-sODvc_400x400.jpg&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">if your microservices must be deployed as a complete set in a specific order, please put them back in a monolith and save yourself some pain</p>&mdash; Matt Stine in Bangalore 🇮🇳 (@mstine) <a href="https://twitter.com/mstine/status/755470158861217792?ref_src=twsrc%5Etfw">July 19, 2016</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<p></p>
 Lastly — not everyone would be happy with the transition to microservices. Prepare for some unsatisfied developers. Some might even quit. It’s inevitable when you’re changing someone’s perception of software development so fundamentally. Invest in getting your teams excited about the transition. Educate them on the benefits and the drawbacks, both for the organisation and for their own personal development. Let the teams pick cool names that represent their development domain. Some developers will feel like they are going through a 12-steps program, from denial, to anger, to acceptance.
 
 ### Conclusion

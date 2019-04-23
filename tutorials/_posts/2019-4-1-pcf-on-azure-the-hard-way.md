@@ -1,15 +1,15 @@
 ---
 layout: post
-title: PCF on Azure - The Hard Way
+title: Pivotal Cloud Foundry on Azure - the Hard Way
 description: Installation instructions using nothing but the command line.
 image: assets/images/pcf-azure.png
 source: https://github.com/odedia/pcf-on-azure-the-hard-way
 type: tutorial
 ---
 
-Below are installation instructions for PCF on Azure without any UI interaction (well... you might have to authenticate your azure account). For standard evaluation purposes, use the PCF on Azure marketplace for a one-click installation: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/pivotal.pivotal-cloud-foundry?tab=Overview. If you want to geek out or get a handle on how things are working internally, read on.
+Below are installation instructions for PCF on Azure without any UI interaction (well... you might have to authenticate your azure account). For standard evaluation purposes, use the [PCF on Azure marketplace for a one-click installation](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/pivotal.pivotal-cloud-foundry?tab=Overview). If you want to geek out or get a handle on how things are working internally, read on.
 
-Install Azure CLI from https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
+Install Azure CLI from <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest>
 
 Clears previous cache of logins if needed:
 
@@ -114,7 +114,7 @@ wget -O /tmp/bbr.tar https://github.com/cloudfoundry-incubator/bosh-backup-and-r
 
 `az login`
 
-create .env file:
+Create .env file:
 
 ```
 
@@ -130,7 +130,7 @@ DECRYPT_PHRASE=<choose secure key and save it safely! Your env is dead without t
 CREDHUB_KEY=<choose a secure key over 21 characters long>
 NOTIFICATIONS_EMAIL=<your email>
 ```
-source the .env file and add to the env of .bashrc:
+Source the .env file and add to the env of .bashrc:
 ```
 source ~/.env
 echo "source ~/.env" >> ~/.bashrc
@@ -229,7 +229,7 @@ openssl req -x509 \
   -config ./${PCF_SUBDOMAIN_NAME}.${PCF_DOMAIN_NAME}.cnf
 ```
 
-Set variables for PAS installation from pivotal network. For example, using this URL https://network.pivotal.io/products/elastic-runtime/#/releases/220833 we can interpolate the following:
+Set variables for PAS installation from pivotal network. For example, using this URL <https://network.pivotal.io/products/elastic-runtime/#/releases/220833> we can interpolate the following:
 ```
 PRODUCT_SLUG="elastic-runtime"
 RELEASE_ID="latest"
@@ -955,8 +955,7 @@ om \
     --stemcell ${FILENAME}
 ```
 
-Everything below is still a work in progress...
-----------
+#### You now have a working PCF environment! You can continue below for reference but please consider it an incomplete example.
 
 Installing MySQL
 --------
@@ -1265,7 +1264,7 @@ PRODUCT_GUID=$(echo ${STAGED_PRODUCTS} |\
 
 
 Acknoledgements:
-Some commands taken from https://github.com/amcginlay/bosh-topics. Much thanks to Alan McGinlay for training and guidance!
-Additional pull requests from Karsten Bott https://github.com/bottkars
+Some commands taken from <https://github.com/amcginlay/bosh-topics>. Much thanks to Alan McGinlay for training and guidance!
+Additional pull requests from Karsten Bott <https://github.com/bottkars>
 
 

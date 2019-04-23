@@ -3,7 +3,9 @@
       <img src="{{ post.image }}" alt="" />
     </span>
     <header class="major">
-      <h3><a href="{{ post.url  | relative_url }}" class="link">{{ post.title }}</a></h3>
+      <h3><a href="{{ post.url  | relative_url }}" class="link">  {{ post.title }}</a></h3>
       <p>{{ post.description }}</p>
+      {% if page.path == 'latest.md' %}<img src="assets/icons/{{post.type}}.png" alt="" class="icon" style="height: 30px" />{% endif %}
+
     </header>
   </article>
