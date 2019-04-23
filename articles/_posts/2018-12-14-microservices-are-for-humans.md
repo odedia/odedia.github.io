@@ -34,7 +34,7 @@ Also, I should point out that when I’m talking about monoliths and their drawb
 
 ### Technological benefits of microservices
 
-The microservice architecture _does_ have technological advantages. In my view, the main technological advantage of the microservice architecture is the ability to scaleeach microservice in isolation, based on its specific load requirements. This achieves an optimal utilisation of the compute resources at hand. You don’t have to over-scale components that do not require it.
+The microservice architecture _does_ have technological advantages. In my view, the main technological advantage of the microservice architecture is the ability to scale each microservice in isolation, based on its specific load requirements. This achieves an optimal utilisation of the compute resources at hand. You don’t have to over-scale components that do not require it.
 
 Another benefit is the ability to selectively deploy only those microservices that change, and not the entire application.
 
