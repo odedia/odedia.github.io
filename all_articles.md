@@ -1,6 +1,6 @@
 ---
 layout: allarticles
-title: My articles
+title: Articles
 landing-title: 'My articles'
 nav-menu: true
 description: A bit more thoughtful... thoughts
@@ -10,4 +10,4 @@ show_tile: true
 order: 10
 ---
 
-<h1>All articles</h1>
+<h1>Articles</h1>

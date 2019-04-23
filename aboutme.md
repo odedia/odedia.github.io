@@ -5,7 +5,7 @@ description: Who am I?
 image: assets/images/headshot.jpg
 nav-menu: true
 show_tile: true
-order: 30
+order: 60
 ---
 
 Hi there! I'm Oded.

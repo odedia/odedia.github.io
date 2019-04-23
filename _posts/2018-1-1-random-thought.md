@@ -3,6 +3,8 @@ layout: post
 title: Random
 description: A random thought
 image: assets/images/pic03.jpg
+#source: 
+type: nontech
 ---
 
 ![test image]({{ site.url | absolute_path}}/assets/images/pic03.jpg)

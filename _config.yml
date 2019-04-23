@@ -21,7 +21,21 @@ linkedin_url: https://www.linkedin.com/in/odedia/
 twitter_url: https://twitter.com/odedia
 pivotal_url: https://content.pivotal.io/authors/oded-shopen
 
+
 # build settings
 markdown: kramdown
 sass:
   style: compressed
+plugins:
+  - jekyll-paginate-v2
+# Pagination Settings
+# pagination:
+#   enabled: true
+#   per_page: 2
+#   permalink: '/page/:num/'
+#   title: ' - page :num'
+#   limit: 0
+#   sort_field: 'date'
+#   sort_reverse: true
+# permalink: /:year/:month/:title.html
+

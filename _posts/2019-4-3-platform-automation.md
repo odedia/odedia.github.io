@@ -1,12 +1,14 @@
 ---
 layout: post
-title: Platform Automation - One pipeline to rule them all
-description: Build a single Platform Automation pipeline for both Pivotal Cloud Foundry and Pivotal Container Service, using Concourse
+title: Platform Automation for PAS and PKS
+description: Build a single Platform Automation pipeline for both Pivotal Application Service and Pivotal Container Service, using Concourse
 image: assets/images/platform-automation.png
 source: https://github.com/odedia/ops-manager-automation-cc
-type: tutorial
+type: tutorial #or post, random
 ---
 ## What is this?
+
+**Credits**: Originally published by Alan McGinlay at https://github.com/amcginlay/ops-manager-automation-cc, my efforts were to create a single pipeline for both PAS and PKS.
 
 The following steps use [Control Tower](https://github.com/EngineerBetter/control-tower) to build a [Concourse](https://concourse-ci.org/) instance on [Google Cloud Platform](https://cloud.google.com/), then uses a combination of [GCS](https://cloud.google.com/storage/) buckets, [Credhub](https://docs.cloudfoundry.org/credhub/), a suite of [Platform Automation](http://docs.pivotal.io/platform-automation) tools and a single Concourse pipeline to deploy (and upgrade) the entire OpsMan and PCF product stack directly from the [Pivotal Network](https://network.pivotal.io).
 
