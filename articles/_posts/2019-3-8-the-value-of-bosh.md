@@ -9,5 +9,5 @@ source: https://content.pivotal.io/blog/the-value-of-bosh
 
 I wrote an article for Pivotal, trying to explain the benefits that BOSH can bring to different roles in an Enterprise.
 
-Read it on [Pivotal Blog](https://content.pivotal.io/blog/the-value-of-bosh).
+Read it on the [Pivotal Blog](https://content.pivotal.io/blog/the-value-of-bosh).
 
