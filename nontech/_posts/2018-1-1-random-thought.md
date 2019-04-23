@@ -2,7 +2,7 @@
 layout: post
 title: Random
 description: A random thought
-image: assets/images/pic02.jpg
+image: assets/images/pic02.png
 type: nontech
 ---
 

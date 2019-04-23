@@ -2,7 +2,7 @@
 layout: post
 title: About me
 description: Who am I?
-image: assets/images/headshot.jpg
+image: assets/images/headshot.png
 nav-menu: true
 show_tile: true
 order: 60

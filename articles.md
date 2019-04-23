@@ -4,7 +4,7 @@ title: Articles
 landing-title: 'My articles'
 nav-menu: true
 description: A bit more thoughtful... thoughts
-image: assets/images/thoughtful.jpg
+image: assets/images/thoughtful.png
 author: Oded Shopen
 show_tile: true
 order: 10
