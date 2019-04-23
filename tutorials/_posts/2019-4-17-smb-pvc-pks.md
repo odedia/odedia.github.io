@@ -11,7 +11,7 @@ I've recently had a customer request to access an SMB server from their PKS Kube
 
 Still, being Kubernetes, it would be nice to treat an SMB share as yet another Persistent Volume and abstract away the protocol being used.
 
-I've found a few solutions for this online, but the only one that seemed valuable and from a large vendor was the [FlexVolume for Azure by Microsoft](https://github.com/Azure/kubernetes-volume-drivers). This project exposes several Azure services as PersistentVolumes to Kubernetes.
+I've found a few solutions for this online, but the only one that seemed valuable and from a well known vendor was the [FlexVolume for Azure by Microsoft](https://github.com/Azure/kubernetes-volume-drivers). This project exposes several Azure services as PersistentVolumes to Kubernetes.
 
 The one drawback of this project is that it was developed specificalyl for Azure and AKS (Azure Kubernetes Service).
 
