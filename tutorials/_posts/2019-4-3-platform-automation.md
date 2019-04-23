@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Platform Automation for PAS and PKS
-description: Build a single Platform Automation pipeline for both Pivotal Application Service and Pivotal Container Service, using Concourse
+title: Platform Automation for PAS and PKS on GCP
+description: Build a single Platform Automation pipeline for both Pivotal Application Service and Pivotal Container Service, using Concourse, for Google Cloud Platform
 image: assets/images/platform-automation.png
 source: https://github.com/odedia/ops-manager-automation-cc
 type: tutorial #or post, random
