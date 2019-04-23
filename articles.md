@@ -1,5 +1,5 @@
 ---
-layout: allarticles
+layout: articles
 title: Articles
 landing-title: 'My articles'
 nav-menu: true

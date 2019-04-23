@@ -1,5 +1,5 @@
 ---
-layout: allposts
+layout: tutorials
 title: Tutorials
 landing-title: 'Tutorials'
 nav-menu: true

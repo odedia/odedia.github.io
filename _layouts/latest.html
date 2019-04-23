@@ -17,7 +17,7 @@
     <div id="main" class="alt">
     <!-- One -->
     <section id="one" class="tiles">
-      {% for post in site.posts %}
+      {% for post in site.posts limit:site.tiles-count %}
       {% include article.html %}
       {% endfor %}
     </section>

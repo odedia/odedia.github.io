@@ -1,6 +1,6 @@
 ---
 title: Non-Tech
-layout: randomthoughts
+layout: nontech
 landing-title: 'Random thoughts'
 description: 'Everything non-tech goes here. Politics, music, life.'
 image: assets/images/pic02.jpg

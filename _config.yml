@@ -12,7 +12,7 @@ country: Israel
 
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
-tiles-count: 60
+tiles-count: 500
 
 # social settings
 500px_url: https://500px.com/odedia
@@ -26,16 +26,16 @@ pivotal_url: https://content.pivotal.io/authors/oded-shopen
 markdown: kramdown
 sass:
   style: compressed
-# plugins:
-#   - jekyll-paginate-v2
-# Pagination Settings
-# pagination:
-#   enabled: true
-#   per_page: 2
-#   permalink: '/page/:num/'
-#   title: ' - page :num'
-#   limit: 0
-#   sort_field: 'date'
-#   sort_reverse: true
-# permalink: /:year/:month/:title.html
+plugins:
+  - jekyll-paginate-v2
+#Pagination Settings
+pagination:
+  enabled: true
+  per_page: 2
+  permalink: '/page/:num/'
+  title: ' - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+permalink: /:year/:month/:title.html
 
