@@ -10,13 +10,13 @@ In many enterprises, the idea of letting developers get access to `kubectl` is b
 
 Still, developers do require access to some aspects of the Kubernetes lifecycle, mainly the Kubernetes dashboard. However, that dashboard requires an access token that is found in the KUBECONFIG file.
 
-In PKS, it is possible to get the KUBECONFIG with the access token by using the `pks` cli, but if `kubectl` is off limits, the `pks` cli is **definetly** off limits. 
+In PKS, it is possible to get the KUBECONFIG file that includes the access token by using the `pks` cli, but if `kubectl` is off limits, the `pks` cli is **definetly** off limits. 
 
-The solution? Run a script that talks to the UAA backend to get the access token. Pivotal and VMware provide this script under this [community support article](https://community.pivotal.io/s/article/script-to-automate-generation-of-the-kubeconfig-for-the-kubernetes-user).
+The solution? Run a script that talks to the UAA backend to get the access token. Pivotal and VMware provide a script under this [community support article](https://community.pivotal.io/s/article/script-to-automate-generation-of-the-kubeconfig-for-the-kubernetes-user).
 
-However, even that can be a challange for many enterprises. Windows is still the king, and running shell scripts is not possible, let alone installation of additional utilities such as `jq`.
+However, even that can be a challenge for many enterprises. Windows is still king, and running shell scripts is not possible, let alone installation of additional utilities such as `jq`.
 
-The solution - get the access token from a Jenkins job that developers already have access to in their daily routine.
+The solution? Get the access token from a Jenkins job that developers already have access to in their daily work.
 
 Let's create a new Jenkins Freestyle job:
 
