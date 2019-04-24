@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Getting a KUBECONFIG access token via in PKS Jenkins job
+title: Get KUBECONFIG access token in PKS from Jenkins
 description: Let developers get an access token for the kubernetes dashboard when kubectl is not allowed
 image: assets/images/k8s-logo.png
 type: tutorial
