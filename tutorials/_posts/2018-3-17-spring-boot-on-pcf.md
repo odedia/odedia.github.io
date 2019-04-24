@@ -1,15 +1,12 @@
 ---
 layout: post
-title: MARK Deploy Spring Boot application to Pivotal Cloud Foundry
+title: Deploy Spring Boot application to Pivotal Cloud Foundry
 description: Is this tutorial even required?
 image: assets/images/spring-boot.png
 source: https://medium.com/@odedia/deploy-spring-boot-application-to-pivotal-cloud-foundry-8bab62e7fbaf
 type: tutorial #or post, random
 ---
 * * *
-
-# Deploy Spring Boot application to Pivotal Cloud Foundry
-
 
 In this tutorial, I will guide you through setting up a working instance of a Spring Boot application on Pivotal Cloud Foundry. It was inspired by a tutorial I read, explaining how to [deploy a Spring Boot app on OpenShift 3](https://medium.com/@pablo127/deploy-spring-boot-application-to-openshift-3-next-gen-2b311f55f0c5). While the article is well written, I couldn’t get over the fact that it requires a lot of boilerplate steps and configuration just to get a hello world up and running, so I thought I’ll clarify how simple it is on the other side of the fence.
 
