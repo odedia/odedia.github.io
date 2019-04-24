@@ -17,12 +17,12 @@ The drawback of this project is that it was developed specifically for Azure and
 
 The biggest issue was that the installation required you to install specific binaries on the worker nodes, specifically `jq`. While that may be a feasible outcome on AKS, it was not a realistic approach for PKS. In PKS, BOSH manages the Worker nodes, patches them, upgrades then or just repaves (i.e. resets) them to a known state. Therefore, any "snowflake" binary installation on the working nodes would disappear on the next upgrade cycle.
 
-I've been working with my collegue Stuart Charlton to solve this issue, and we were able to come up with [this fork](https://github.com/odedia/kubernetes-volume-drivers/tree/master/flexvolume/smb).
+I've been working with my collegue Stuart Charlton ([@svrc](https://twitter.com/svrc?lang=en)) to come up with a solution, and we came up with [this fork](https://github.com/odedia/kubernetes-volume-drivers/tree/master/flexvolume/smb).
 
-It differs from the upstream in the following ways:
+It differs from the upstream Azure project in the following ways:
 
-1. `hostPath` settings are set to match their expected location on PKS
-2. `jq` is being installed as part of the DameonSet deployment to Kubernetes, so no prior installation is required. Upon upgrade/resize of the cluster, each new/upgraded node would run the DameonSet again and install `jq` again. Although `cifs-utils` is another required binary installation, Stuart already got that included in the PKS upstream distribution so it already exists on the worker nodes.
+1. `hostPath` settings are set to match their expected location on PKS.
+2. `jq` is being installed as part of the DameonSet deployment to Kubernetes, so no prior installation is required. Upon upgrade/resize of the cluster, each new/upgraded node would run the DameonSet again and install `jq` again. Microsoft states that  `cifs-utils` is another required binary but it is included in the PKS distribution so it already exists on the worker nodes.
 
 I tested this on a PKS 1.3 cluster. I was able to resize, repave and upgrade the cluster, and the SMB persistent volume was still there waiting for me.
 
