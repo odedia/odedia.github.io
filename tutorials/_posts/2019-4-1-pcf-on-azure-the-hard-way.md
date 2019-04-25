@@ -5,6 +5,7 @@ description: Installation instructions using nothing but the command line.
 image: assets/images/pcf-azure.png
 source: https://github.com/odedia/pcf-on-azure-the-hard-way
 type: tutorial
+comments: true
 ---
 
 Below are installation instructions for PCF on Azure without any UI interaction (well... you might have to authenticate your azure account). For standard evaluation purposes, use the [PCF on Azure marketplace for a one-click installation](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/pivotal.pivotal-cloud-foundry?tab=Overview). If you want to geek out or get a handle on how things are working internally, read on.

@@ -22,7 +22,7 @@ linkedin_url: https://www.linkedin.com/in/odedia/
 twitter_url: https://twitter.com/odedia
 pivotal_url: https://content.pivotal.io/authors/oded-shopen
 
-
+page.comments: true
 # build settings
 markdown: kramdown
 sass:
