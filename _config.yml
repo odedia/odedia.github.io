@@ -9,6 +9,7 @@ author: Oded Shopen
 street_address: Israel
 city: Israel
 country: Israel
+comments: true
 
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"

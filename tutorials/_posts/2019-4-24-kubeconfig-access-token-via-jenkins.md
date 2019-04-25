@@ -4,6 +4,7 @@ title: Get KUBECONFIG access token in PKS from Jenkins
 description: Let developers get an access token for the kubernetes dashboard when kubectl is not allowed
 image: assets/images/k8s-logo.png
 type: tutorial
+comments: true
 ---
 
 In many enterprises, the idea of letting developers get access to `kubectl` is blasphemy. `kubectl` is a powerful CLI and if you don't have proper RBAC setup, you can do some serious damage. The path many enterprises take is to have pipelines do all the deployment to the kubernetes cluster.
