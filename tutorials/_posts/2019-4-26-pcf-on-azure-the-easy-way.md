@@ -6,11 +6,12 @@ image: assets/images/pcf-on-azure-the-easy-way/pcf-on-azure.png
 type: tutorial
 comments: true
 ---
-In this tutorial I'll show you the fastest way to get an evaluation of Pivotal Cloud Foundry.
+In this tutorial I'll show you the fastest way to get an evaluation of Pivotal Cloud Foundry up and running.
 
 If you want get a deeper understanding of how the Pivotal Cloud Foundry installation works, including the use of BOSH, Ops Manager and the networking you need to setup, have a look at [PCF on Azure - the Hard Way]({% post_url /articles/2019-4-1-pcf-on-azure-the-hard-way %}).
 
-Go to the [Pivotal Cloud Foundry on Microsoft Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/pivotal.pivotal-cloud-foundry?tab=Overview) page and click "Get it now" followed by "Create":
+
+Go to the [Pivotal Cloud Foundry on Microsoft Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/pivotal.pivotal-cloud-foundry?tab=Overview) page and click `Get it now` followed by `Continue` and then `Create`:
 
 ![]({{page.base_url}}/assets/images/pcf-on-azure-the-easy-way/get-it-now.png)
 <p></p>
@@ -79,6 +80,8 @@ SUBSCRIPTION_ID=<id field from response json above while running az account list
 TENANT_ID=<tenantId field from response json above while running az account list>
 ```
 
+**Important**: Choose a CLIENT_SECRET that is at least 40 characters long and contains alphanumeric characters, digits and at least one underscore. Otherwise the deployment will later fail on password validation.
+
 Now, create an active directory application:
 ```
 az ad app create \
@@ -92,9 +95,11 @@ az ad app create \
 
 Create a service principal from the AAD:
 
+```
 az ad sp create --id `az ad app show --id http://${USER_ID}BOSHAzureCPI | jq -r .appId`
+```
 
-Wait for about 30 seconds for Azure active directory to update, and then add the contributor role:
+Wait for about 30 seconds for Azure active directory updates to progapate, then add the contributor role:
 
 ```
 az role assignment create --assignee http://${USER_ID}BOSHAzureCPI --role "Contributor" --scope /subscriptions/${SUBSCRIPTION_ID}
@@ -152,11 +157,11 @@ Until `Pivotal Network Token`, enter your Pivotal Network token from Pivnet at [
 
 ![]({{page.base_url}}/assets/images/pcf-on-azure-the-easy-way/pivnet-token.png)
 
-Before continuing, make sure you accepted the EULAs for the links below at Pivnet. In each of the following links, you will be prompted to accept an End-User License Agreement. Once you accepted the EULA, a download will begin, but you can cancel it. You account has already accepted the EULA and so the installation from Azure can download the files.
+Before continuing, make sure you accepted the EULAs for the links below at Pivnet. In each of the following links, you will be prompted to accept an End-User License Agreement. Once you accepted the EULA, a download will begin, but you can immediatly cancel it. You account is now linked to accepting the EULA and so the installation from Azure can download the files.
 
 https://network.pivotal.io/products/ops-manager/ (Choose 
-latest version and then download `Pivotal Cloud Foundry Ops Manager YAML for Azure`)
-https://network.pivotal.io/products/elastic-runtime/ (Choose latest version and then download Small Footprint PAS)
+latest 2.4 version and then download `Pivotal Cloud Foundry Ops Manager YAML for Azure`. Do the same for the latest 2.5 version)
+https://network.pivotal.io/products/elastic-runtime/ (Choose latest 2.4 version and then download Small Footprint PAS. Do the same for the latest 2.5)
 https://network.pivotal.io/products/azure-service-broker/ (Choose latest version and then download Microsoft Azure Service Broker)
 
 You now have all required data for installation:
@@ -167,11 +172,25 @@ Click "OK". In the next page, wait for the validation to complete and click "OK"
 
 Your deployment will now begin. You can track the progress under `Resource Groups --> pcf --> Deployments`. You will receive a notification in the Azure portal when the Deployment was successful, however note that there are additional installations done after the deployment is complete.
 
-When the deployment is done, click on the deployment "pivotal.pivotal-cloud-foundry-...." and then "Outputs". You will see the login URL and password for Ops Manager.
+When the deployment is done, click on the deployment `pivotal.pivotal-cloud-foundry-....` and then `Outputs`. You will see the login URL and password for Ops Manager:
+
+![]({{page.base_url}}/assets/images/pcf-on-azure-the-easy-way/outputs.png)
 
 
+Go to the URL listed under `opsMan-FQDN`. The username is `admin` and the password is located under `Outputs-->password`.
+
+You can now track the progress of the installation in Ops Manager.
+
+![]({{page.base_url}}/assets/images/pcf-on-azure-the-easy-way/apply-changes.png)
+
+<p></p>
+
+![]({{page.base_url}}/assets/images/pcf-on-azure-the-easy-way/progress.png)
 
 
+When the BOSH Direcor installation completes, it might take up to 1/2 an hour for the PAS installation to continue. You can track the progress under `Resource Group --> Activity Log`.
+
+![]({{page.base_url}}/assets/images/pcf-on-azure-the-easy-way/activity-log.png)
 
 
 
