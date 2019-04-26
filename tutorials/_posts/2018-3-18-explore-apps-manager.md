@@ -7,7 +7,6 @@ source: https://medium.com/@odedia/exploring-pivotal-cloud-foundrys-apps-manager
 type: tutorial #or post, random
 ---
 * * *
-* * *
 
 This is a quick followup on “[Deploying Spring Boot App to Pivotal Cloud Foundry](https://medium.com/@odedia/deploy-spring-boot-application-to-pivotal-cloud-foundry-8bab62e7fbaf)”, that is meant to briefly show the available insights you can get from your app inside apps manager.
 
