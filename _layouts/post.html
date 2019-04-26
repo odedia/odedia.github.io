@@ -29,7 +29,7 @@
 </section>
 
 {% if page.comments == nil or page.comments == true %}
-<div id="disqus_thread"></div>
+<div id="disqus_thread" style="margin-left: 10%; margin-right: 10%">
 <script>
 
 /**
@@ -49,7 +49,7 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                            
+</div>
 {% endif %}
 
 </div>
