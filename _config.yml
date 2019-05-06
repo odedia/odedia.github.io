@@ -21,7 +21,15 @@ github_url: https://www.github.com/odedia
 linkedin_url: https://www.linkedin.com/in/odedia/
 twitter_url: https://twitter.com/odedia
 pivotal_url: https://content.pivotal.io/authors/oded-shopen
-
+twitter:
+  username: odedia
+  card: summary
+social:
+  name: Oded Shopen
+  links:
+    - https://twitter.com/odedia
+    - https://www.linkedin.com/in/odedia
+    - https://github.com/odedia
 page.comments: true
 # build settings
 markdown: kramdown
@@ -29,6 +37,7 @@ sass:
   style: compressed
 plugins:
   - jekyll-paginate-v2
+  - jekyll-seo-tag
 #Pagination Settings
 pagination:
   enabled: true

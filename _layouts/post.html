@@ -24,7 +24,9 @@
 		</header>
 		{% if page.image %}<span class="image main"><img src="{{page.base_url}}/{{ page.image }}" alt="" class="image title"/>{% endif %}
 		{% if page.source %}<i> Originally published at <a href="{{ page.source }}">{{page.source}}</a></i></p></span>{% endif %}
-		<p>{{ content }}
+		<p>{{ content }}</p>
+		<!-- {% include share-buttons.html %} -->
+
 	</div>
 </section>
 
