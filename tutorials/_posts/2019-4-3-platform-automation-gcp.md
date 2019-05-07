@@ -476,6 +476,18 @@ Run this job manually once the `install-opsman` job has run successfully.
 
 # Teardown
 
+You have a "delete-installation" pipline that can be setup with this command:
+```bash
+fly -t control-tower-pautomation set-pipeline -p delete-installation -n \
+  -c ~/ops-manager-automation-cc/ci/${PRODUCT_SLUG}/delete-installation.yml \
+  -l ~/private.yml
+
+fly -t control-tower-pautomation unpause-pipeline -p delete-installation
+
+```
+
+You will need to manually run this pipeline.
+
 The following steps will help you when you're ready to dispose of everything.
 
 Use the `om` tool to delete the installation (be careful, you will __not__ be asked to confirm this operation):
