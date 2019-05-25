@@ -8,7 +8,14 @@ type: tutorial #or post, random
 ---
 ## What is this?
 
-**Credits**: This tutorial is largly based on the excellent work by Alan McGinlay [on github](https://github.com/amcginlay/ops-manager-automation-cc), my small contribution was to create a single pipeline for both PAS and PKS.
+**Credits**: This tutorial is largly based on the excellent work by Alan McGinlay [on github](https://github.com/amcginlay/ops-manager-automation-cc), my small contributions were:
+- One terraform for both PAS and PKS since it’s now supported on the same ops manager.
+- Added terraform entries for VMware harbor (it’s not included in the official PKS terraform for some reason)
+- Let’s encrypt certificates for concourse and PCF.
+- Separation of main pipeline and “fetch artifacts”
+- Additional marketplace services
+- Some minor fixes and customizations such as triggers of upload-and-configure when new artifacts are downloaded.
+
 
 The following steps use [Control Tower](https://github.com/EngineerBetter/control-tower) to build a [Concourse](https://concourse-ci.org/) instance on [Google Cloud Platform](https://cloud.google.com/), then uses a combination of [GCS](https://cloud.google.com/storage/) buckets, [Credhub](https://docs.cloudfoundry.org/credhub/), a suite of [Platform Automation](http://docs.pivotal.io/platform-automation) tools and a single Concourse pipeline to deploy (and upgrade) the entire OpsMan and PCF product stack directly from the [Pivotal Network](https://network.pivotal.io).
 
