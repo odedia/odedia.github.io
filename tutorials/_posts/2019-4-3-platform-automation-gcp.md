@@ -319,7 +319,7 @@ GOOGLE_APPLICATION_CREDENTIALS=~/gcp_credentials.json \
   control-tower deploy \
     --region ${GCP_REGION} \
     --iaas gcp \
-    --workers 3 \
+    --workers 2 \
     --domain concourse.${CONCOURSE_SUBDOMAIN_NAME}.${PCF_DOMAIN_NAME} \
     pautomation
 ```
