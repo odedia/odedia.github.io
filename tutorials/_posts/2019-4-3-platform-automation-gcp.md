@@ -185,7 +185,7 @@ wget -O fly.tgz https://github.com/concourse/concourse/releases/download/v${FLY_
   sudo mv fly /usr/local/bin && \
   rm fly.tgz
   
-CT_VERSION=0.7.0
+CT_VERSION=0.8.3
 wget -O control-tower https://github.com/EngineerBetter/control-tower/releases/download/${CT_VERSION}/control-tower-linux-amd64 && \
   chmod +x control-tower && \
   sudo mv control-tower /usr/local/bin/
