@@ -205,7 +205,7 @@ wget -O bosh https://s3.amazonaws.com/bosh-cli-artifacts/bosh-cli-${BOSH_VERSION
   chmod +x bosh && \
   sudo mv bosh /usr/local/bin/
   
-CHUB_VERSION=2.2.1
+CHUB_VERSION=2.6.1
 wget -O credhub.tgz https://github.com/cloudfoundry-incubator/credhub-cli/releases/download/${CHUB_VERSION}/credhub-linux-${CHUB_VERSION}.tgz && \
   tar -xvf credhub.tgz && \
   sudo mv credhub /usr/local/bin && \
