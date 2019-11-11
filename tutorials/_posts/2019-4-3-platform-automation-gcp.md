@@ -179,7 +179,7 @@ sudo pip install certbot-dns-google
 ```bash
 cd ~
 
-FLY_VERSION=5.1.0
+FLY_VERSION=5.6.0
 wget -O fly.tgz https://github.com/concourse/concourse/releases/download/v${FLY_VERSION}/fly-${FLY_VERSION}-linux-amd64.tgz && \
   tar -xvf fly.tgz && \
   sudo mv fly /usr/local/bin && \
