@@ -1,12 +1,12 @@
 ---
-title: Non-Tech
+title: Videos
 layout: nontech
-landing-title: 'Random thoughts'
-description: 'Everything non-tech goes here. Politics, music, life.'
+landing-title: 'My YouTube videos'
+description: 'All my YouTube videos are shared here.'
 image: assets/images/pic02.png
 nav-menu: true
 show_tile: true
 order: 40
 ---
 
-<h1>Random thoughts</h1>
+<h1>Videos</h1>
