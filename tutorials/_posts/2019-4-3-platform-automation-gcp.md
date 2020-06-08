@@ -166,12 +166,10 @@ sudo apt-get install software-properties-common  --yes && \
 sudo add-apt-repository ppa:certbot/certbot --yes && \
 sudo apt-get update --yes && \
 sudo apt-get install certbot --yes && \
-sudo add-apt-repository ppa:jonathonf/python-2.7 --yes && \
-sudo apt-get update --yes && \
-sudo apt-get install python2.7 --yes && \
+sudo apt-get install python-minimal --yes && \
 sudo apt-get install python-pip python-dev build-essential --yes && \
 sudo apt-get install python-setuptools --yes && \
-sudo pip install cryptography==2.6.1 && \
+sudo pip install cryptography && \
 sudo pip install certbot-dns-google
 
 ```
@@ -257,6 +255,7 @@ gcloud dns managed-zones create ${PCF_SUBDOMAIN_NAME}-zone --dns-name ${PCF_SUBD
 DOMAIN=${PCF_SUBDOMAIN_NAME}.${PCF_DOMAIN_NAME} EMAIL=${MY_EMAIL} ~/ops-manager-automation-cc/bin/certbot.sh
 gcloud dns managed-zones delete ${PCF_SUBDOMAIN_NAME}-zone
 ```
+Note: If you face issues with `AttributeError: 'module' object has no attribute 'Locale'`, please remove `parsedatetime` 2.6 by running `pip uninstall parsedatetime` and then run `pip install parsedatetime==2.5`.
 
 ## Configure Terraform
 
